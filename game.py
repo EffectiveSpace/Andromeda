@@ -42,15 +42,15 @@ def get_result():
 game_over = False
 player_1 = True
 
-while game_over == False:
+while not game_over:
     print_maps()
     
     if player_1 == True:
         symbol = "X"
-        step = int(input('Человек 1, ваш ход: '))
+        step = int(input('Игрок 1, ваш ход: '))
     else:
         symbol = "O"
-        step = int(input('Человек 2, ваш ход: '))
+        step = int(input('Игрок 2, ваш ход: '))
     
     step_maps(step, symbol)
     win = get_result()
@@ -63,4 +63,4 @@ while game_over == False:
     player_1 = not(player_1)
     
 print_maps()
-print("Победил", win)
+print(f'Победил {win}!')
